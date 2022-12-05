@@ -62,9 +62,9 @@ const Register = () => {
             console.log(JSON.stringify(response))
 
         } catch (error) {
-            if (!err?.response) {
+            if (!error?.response) {
                 setErrMsg('No Server Response')
-            } else if (err.response?.status === 409) {
+            } else if (error.response?.status === 409) {
                 setErrMsg("Username Taken")
             } else {
                 setErrMsg('Registration Failen')
