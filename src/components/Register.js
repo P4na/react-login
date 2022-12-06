@@ -56,7 +56,8 @@ const Register = () => {
             return
         }
         try {
-            const response = await axios.post(REGISTER_URL, JSON.stringify({user, pwd}), { headers: { 'Content-Type': 'application/json'}, withCredentials:true})
+            const response = await axios.post(REGISTER_URL, JSON.stringify({user, pwd}), { headers: { 'Content-Type': 'application/json'}})
+            setSuccess(true)
             console.log(response.data)
             console.log(response.accessToken)
             console.log(JSON.stringify(response))
@@ -78,7 +79,7 @@ const Register = () => {
             <section>
                 <h1>Success!</h1>
                 <p>
-                    <a href='#'>Sign in</a>
+                    Sign in
                 </p>
             </section>
         ): (
